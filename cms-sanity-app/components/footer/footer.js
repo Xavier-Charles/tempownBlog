@@ -114,7 +114,7 @@ const RightReservedAndSocialLink = () => {
     </div>
   );
 };
-
+ 
 const ContactBtn = ({ handleShowContactUsModal }) => {
   return (
     <div className="pt-4 pb-4">
