@@ -43,7 +43,7 @@ export default function PostHeader({
 const RightReservedAndSocialLink = () => {
   return (
     <div className="relative flex flex-wrap items-center mt-2 justify-end w-full text-sm text-temp-gray border-b border-temp-green-100">
-      <div className="pb-6 md:pb-0 text-temp-green-500 mr-3.5">Share on: {" "}</div>
+      <div className="pb-6 md:pb-0 text-temp-green-500 w-20">Share on: {" "}</div>
       <div className="flex flex-row w-6/12 justify-between">
         <a
           href="https://twitter.com/TempOwnHQ"
