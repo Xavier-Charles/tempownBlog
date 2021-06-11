@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "../assets/logo/logo2.svg";
+import Logo from "../../assets/logo/logo2.svg";
 
 const Header = (props) => {
   return (

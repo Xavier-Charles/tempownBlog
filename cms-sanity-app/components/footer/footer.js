@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Logo from "../assets/logo/logo2.svg";
-import ContactUsModal from "../components/modals/ContactUsModal";
-import AlertModal2 from "../components/modals/AlertModal2";
+import Logo from "../../assets/logo/logo2.svg";
+import ContactUsModal from "../modals/ContactUsModal";
+import AlertModal2 from "../modals/AlertModal2";
 
 const Column = ({ title, links = [], isTargetLink = false, className }) => {
   return (
