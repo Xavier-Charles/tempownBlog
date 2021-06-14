@@ -14,7 +14,7 @@ import {
   getClient,
   overlayDrafts,
 } from "../../lib/sanity.server";
-// import PostsFilterContext from "../context/postsFilterContext";
+import { PostsProvider } from "../../context/postsContext";
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter();
@@ -32,48 +32,50 @@ export default function Post({ data = {}, preview }) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>{post.title} | TempOwn Blog</title>
-                {post.coverImage && (
-                  <meta
-                    key="ogImage"
-                    property="og:image"
-                    content={urlForImage(post.coverImage)
-                      .width(1200)
-                      .height(627)
-                      .fit("crop")
-                      .url()}
-                  />
-                )}
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-                readTime={post.readTime}
-                type={post.type}
-              />
-              <PostBody content={post.content} />
-            </article>
-            {/* <SectionSeparator /> */}
-            <div>
-              <h1 className="text-center mx-8 my-16 font-serif font-normal text-temp-green-500 text-4xl md:text-6.5xl leading-tight md:pr-8">
-                Similar Articles
-              </h1>
-            </div>
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
-      </Container>
-    </Layout>
+    <PostsProvider allPosts={morePosts}>
+      <Layout preview={preview}>
+        <Container>
+          {router.isFallback ? (
+            <PostTitle>Loading…</PostTitle>
+          ) : (
+            <>
+              <article>
+                <Head>
+                  <title>{post.title} | TempOwn Blog</title>
+                  {post.coverImage && (
+                    <meta
+                      key="ogImage"
+                      property="og:image"
+                      content={urlForImage(post.coverImage)
+                        .width(1200)
+                        .height(627)
+                        .fit("crop")
+                        .url()}
+                    />
+                  )}
+                </Head>
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                  readTime={post.readTime}
+                  type={post.type}
+                />
+                <PostBody content={post.content} />
+              </article>
+              {/* <SectionSeparator /> */}
+              <div>
+                <h1 className="text-center mx-8 my-16 font-serif font-normal text-temp-green-500 text-4xl md:text-6.5xl leading-tight md:pr-8">
+                  Similar Articles
+                </h1>
+              </div>
+              {morePosts.length > 0 && <MoreStories />}
+            </>
+          )}
+        </Container>
+      </Layout>
+    </PostsProvider>
   );
 }
 

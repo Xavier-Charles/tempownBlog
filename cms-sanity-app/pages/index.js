@@ -4,8 +4,7 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { indexQuery } from "../lib/queries";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
-import { PostsProvider } from "../context/postsFilterContext";
-import { useState } from "react";
+import { PostsProvider } from "../context/postsContext";
 
 export default function Index({ allPosts, preview }) {
   return (

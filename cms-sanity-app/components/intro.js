@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
 import { filterQuery } from "../lib/queries";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
-import PostsFilterContext from "../context/postsFilterContext";
+import PostsContext from "../context/postsContext";
 
 export default function Intro({ Filter }) {
-  const Posts = useContext(PostsFilterContext);
+  const Posts = useContext(PostsContext);
   const [selectedBtn, setSelectedBtn] = useState("");
 
   const handleBtnSelect = (title) => {

@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 import PostPreview from '../components/post-preview'
-import PostsFilterContext from '../context/postsFilterContext'
+import PostsContext from '../context/postsContext'
 
 export default function MoreStories() {
-  const Posts = useContext(PostsFilterContext)
+  const Posts = useContext(PostsContext)
   return (
     <section>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-6 lg:gap-x-12 row-gap-20 md:row-gap-32 mb-20">
