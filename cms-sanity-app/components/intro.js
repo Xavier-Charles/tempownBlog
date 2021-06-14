@@ -27,15 +27,15 @@ export default function Intro({ Filter }) {
   };
   return (
     <section className="flex-col justify-center flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="m-8 mt-0 font-serif font-normal text-temp-green-500 text-6xl md:text-6.5xl leading-tight md:pr-8">
+      <h1 className="m-8 mt-0 font-serif font-normal text-temp-green-500 text-4xl md:text-6.5xl leading-tight md:pr-8">
         TempOwn Blog
       </h1>
-      <p className="mb-2 text-temp-primary">
+      <p className="mb-2 mx-10 md:mx-0 text-temp-primary text-center">
         Learn how we are building a fully insured peer-to-peer rental
         marketplace for essential items and equipment.
       </p>
-      <div className="flex flex-row mt-5">
-        <Buttons title={"Quick Filter:"} label={true} />
+      <div className="flex justify-center flex-row flex-wrap mt-5">
+        <Buttons title={"Quick Filter"} label={true} />
         <Buttons
           title={"What's New"}
           handleBtnSelect={handleBtnSelect}
@@ -72,17 +72,17 @@ function Buttons({ title, label, handleBtnSelect, selectedBtn }) {
     if (label === undefined) handleBtnSelect(title);
   };
   return (
-    <div className="m-4" onClick={handleClick}>
+    <div className="m-1 md:m-4" onClick={handleClick}>
       {label !== undefined ? (
-        <p className="leading-3 mt-0.5 px-5 py-2 flex items-center justify-center text-sm text-temp-primary">
+        <p className="mx-24 uppercase md:m-0 md:leading-3 md:mt-0.5 md:px-5 md:py-2 md:flex items-center ustify-center text-sm text-temp-primary">
           {title}
         </p>
       ) : selectedBtn === title ? (
-        <p className="pointer leading-3 px-5 py-2 flex items-center justify-center text-sm text-temp-green-500 border border-green-100 bg-green-100">
+        <p className="min-w-max pointer leading-3 px-5 py-2 flex items-center justify-center text-sm text-temp-green-500 border border-green-100 bg-green-100">
           {title}
         </p>
       ) : (
-        <p className="pointer leading-3 px-5 py-2 flex items-center justify-center text-sm rounded-md text-temp-gray border border-gray">
+        <p className="min-w-max pointer leading-3 px-5 py-2 flex items-center justify-center text-sm rounded-md text-temp-gray border border-gray">
           {title}
         </p>
       )}

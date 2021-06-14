@@ -11,39 +11,42 @@ export default function PostHeader({
   type
 }) {
   return (
-    <div className="px-20 md:px-30 lg:px-40">
+    <div className="px-5 md:px-20 md:px-30 lg:px-40">
       <PostTitle>{title}</PostTitle>
       {/* <div className="hidden md:block md:mb-12"> */}
       <div className="">
         <div className="grid grid-cols-12 ">
-          <Avatar2
-            name={author.name}
-            picture={author.picture}
-            date={date}
-            readTime={readTime}
-          />
-          <div className="col-end-13 col-span-4">
-            <RightReservedAndSocialLink />
+          <div className="col-start-1 col-span-12 md:col-span-4">
+            <Avatar2
+              name={author.name}
+              picture={author.picture}
+              date={date}
+              read
+              readTime={readTime}
+            />
+          </div>
+          <div className="col-span-12 md:col-span-4">
+            <SocialShareLink />
           </div>
         </div>
-        <div className="my-6 text-temp-green-500">
+        <div className="-mt-5 md:mt-0 md:my-6 text-temp-green-500">
           <p>{type}</p>
         </div>
       </div>
 
-      {/* <hr className="divide-solid divider-green500 m-4 mx-40" /> */}
+      <hr className="md:hidden divide-solid divider-green500 mb-5 md:m-4 md:mx-40" />
 
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="mb-8 md:mb-16 sm:mx-0 -mx-6 md:mx-0">
         <CoverImage title={title} image={coverImage} />
       </div>
     </div>
   );
 }
 
-const RightReservedAndSocialLink = () => {
+const SocialShareLink = () => {
   return (
-    <div className="relative flex flex-wrap items-center mt-2 justify-end w-full text-sm text-temp-gray border-b border-temp-green-100">
-      <div className="pb-6 md:pb-0 text-temp-green-500 w-20">Share on: {" "}</div>
+    <div className="relative flex flex-wrap items-center mt-6 md:mt-2 justify-end w-full text-sm text-temp-gray border-b border-temp-green-100">
+      <div className="hidden md:block pb-6 md:pb-0 text-temp-green-500 w-20">Share on: {" "}</div>
       <div className="flex flex-row w-6/12 justify-between">
         <a
           href="https://twitter.com/TempOwnHQ"
