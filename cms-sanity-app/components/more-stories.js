@@ -1,10 +1,13 @@
+import { useContext } from 'react'
 import PostPreview from '../components/post-preview'
+import PostsFilterContext from '../context/postsFilterContext'
 
-export default function MoreStories({ posts }) {
+export default function MoreStories() {
+  const Posts = useContext(PostsFilterContext)
   return (
     <section>
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-6 lg:gap-x-12 row-gap-20 md:row-gap-32 mb-20">
-        {posts.map((post) => (
+        {Posts.posts.map((post) => (
           <PostPreview
             key={post.slug}
             title={post.title}

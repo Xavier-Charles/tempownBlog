@@ -14,6 +14,7 @@ import {
   getClient,
   overlayDrafts,
 } from "../../lib/sanity.server";
+// import PostsFilterContext from "../context/postsFilterContext";
 
 export default function Post({ data = {}, preview }) {
   const router = useRouter();
