@@ -14,7 +14,7 @@ export default function PostPreview({
   readTime
 }) {
   return (
-    <div className="mb-5">
+    <div className="mb-16">
       <div className="mb-5">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Avatar2 from "../components/avatar/avatar2";
 import CoverImage from "../components/cover-image";
 import PostTitle from "../components/post-title";
@@ -8,7 +9,7 @@ export default function PostHeader({
   date,
   author,
   readTime,
-  type
+  type,
 }) {
   return (
     <div className="px-5 md:px-20 md:px-30 lg:px-40">
@@ -25,11 +26,11 @@ export default function PostHeader({
               readTime={readTime}
             />
           </div>
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-span-4 md:col-end-13">
             <SocialShareLink />
           </div>
         </div>
-        <div className="-mt-5 md:mt-0 md:my-6 text-temp-green-500">
+        <div className="-mt-5 md:my-6 text-temp-green-500">
           <p>{type}</p>
         </div>
       </div>
@@ -44,19 +45,28 @@ export default function PostHeader({
 }
 
 const SocialShareLink = () => {
+  const [postURL, setPostURL] = useState("");
+
+  useEffect(() => {
+    setPostURL(window.location.href);
+  }, [])
+
   return (
-    <div className="relative flex flex-wrap items-center mt-6 md:mt-2 justify-end w-full text-sm text-temp-gray border-b border-temp-green-100">
-      <div className="hidden md:block pb-6 md:pb-0 text-temp-green-500 w-20">Share on: {" "}</div>
-      <div className="flex flex-row w-6/12 justify-between">
+    <div className="relative flex flex-wrap items-center mt-6 md:mt-2 justify-end w-full text-sm text-temp-gray">
+      <div className="hidden md:block pb-6 md:pb-0 text-temp-green-500 w-20">
+        Share on:{" "}
+      </div>
+      <div className="flex flex-row w-6/12 justify-end">
         <a
-          href="https://twitter.com/TempOwnHQ"
+          href={`https://twitter.com/intent/tweet?url=${postURL}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="mx-1.5"
         >
           <svg
             width="19"
-            height="16"
-            viewBox="0 0 19 16"
+            height="19"
+            viewBox="0 0 19 19"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -68,9 +78,10 @@ const SocialShareLink = () => {
           </svg>
         </a>
         <a
-          href="https://facebook.com/tempownhq"
+          href={`https://www.facebook.com/sharer/sharer.php?u=${postURL}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="mx-1.5"
         >
           <svg
             width="19"
@@ -87,40 +98,42 @@ const SocialShareLink = () => {
           </svg>
         </a>
         <a
-          href="https://www.instagram.com/tempownhq/"
+          href={`https://www.linkedin.com/shareArticle?mini=true&url=${postURL}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="mx-1.5"
         >
           <svg
+            xmlns="http://www.w3.org/2000/svg"
             width="19"
             height="20"
-            viewBox="0 0 19 20"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 17"
           >
             <path
               opacity="0.9"
-              d="M9.87794 4.63247C7.30653 4.63247 5.23242 6.80921 5.23242 9.50786C5.23242 12.2065 7.30653 14.3832 9.87794 14.3832C12.4493 14.3832 14.5235 12.2065 14.5235 9.50786C14.5235 6.80921 12.4493 4.63247 9.87794 4.63247ZM9.87794 12.6775C8.21623 12.6775 6.85775 11.256 6.85775 9.50786C6.85775 7.75968 8.21218 6.33822 9.87794 6.33822C11.5437 6.33822 12.8981 7.75968 12.8981 9.50786C12.8981 11.256 11.5396 12.6775 9.87794 12.6775ZM15.797 4.43304C15.797 5.06527 15.3119 5.57021 14.7135 5.57021C14.1111 5.57021 13.6299 5.06103 13.6299 4.43304C13.6299 3.80505 14.1151 3.29587 14.7135 3.29587C15.3119 3.29587 15.797 3.80505 15.797 4.43304ZM18.8738 5.58718C18.8051 4.06389 18.4736 2.71456 17.4102 1.60285C16.3509 0.491146 15.0652 0.143207 13.6138 0.0668297C12.1178 -0.0222766 7.63402 -0.0222766 6.13808 0.0668297C4.69065 0.138963 3.40494 0.486902 2.34161 1.59861C1.27828 2.71032 0.950785 4.05964 0.87801 5.58294C0.793105 7.1529 0.793105 11.8586 0.87801 13.4285C0.946742 14.9518 1.27828 16.3012 2.34161 17.4129C3.40494 18.5246 4.6866 18.8725 6.13808 18.9489C7.63402 19.038 12.1178 19.038 13.6138 18.9489C15.0652 18.8768 16.3509 18.5288 17.4102 17.4129C18.4695 16.3012 18.801 14.9518 18.8738 13.4285C18.9587 11.8586 18.9587 7.15715 18.8738 5.58718ZM16.9412 15.1131C16.6259 15.9447 16.0154 16.5854 15.2189 16.9207C14.0262 17.4171 11.196 17.3025 9.87794 17.3025C8.55989 17.3025 5.72568 17.4129 4.53701 16.9207C3.74456 16.5897 3.13406 15.949 2.81465 15.1131C2.34161 13.8613 2.45077 10.8911 2.45077 9.50786C2.45077 8.12459 2.34565 5.15013 2.81465 3.90265C3.13001 3.07099 3.74052 2.43027 4.53701 2.09506C5.72972 1.59861 8.55989 1.71318 9.87794 1.71318C11.196 1.71318 14.0302 1.60285 15.2189 2.09506C16.0113 2.42603 16.6218 3.06674 16.9412 3.90265C17.4143 5.15438 17.3051 8.12459 17.3051 9.50786C17.3051 10.8911 17.4143 13.8656 16.9412 15.1131Z"
+              d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
               fill="#08A05C"
             />
           </svg>
         </a>
 
         <a
-          href="https://www.youtube.com/channel/UCVxeZLtzSOrq5DtbXigzrSQ"
+          href={`mailto:reciever@example.com?&subject=&cc=&bcc=&body=${postURL}%0A`}
           target="_blank"
           rel="noopener noreferrer"
+          className="mx-1.5"
         >
           <svg
-            width="26"
-            height="20"
-            viewBox="0 0 26 20"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="none"
+            viewBox="0 0 24 20"
           >
             <path
               opacity="0.9"
-              d="M25.4614 2.97607C25.165 1.80462 24.2916 0.882027 23.1826 0.568931C21.1725 0 13.1124 0 13.1124 0C13.1124 0 5.05236 0 3.04225 0.568931C1.93329 0.882076 1.05989 1.80462 0.76345 2.97607C0.224854 5.09938 0.224854 9.52947 0.224854 9.52947C0.224854 9.52947 0.224854 13.9596 0.76345 16.0829C1.05989 17.2543 1.93329 18.1385 3.04225 18.4516C5.05236 19.0205 13.1124 19.0205 13.1124 19.0205C13.1124 19.0205 21.1725 19.0205 23.1826 18.4516C24.2916 18.1385 25.165 17.2543 25.4614 16.0829C26 13.9596 26 9.52947 26 9.52947C26 9.52947 26 5.09938 25.4614 2.97607V2.97607ZM10.4763 13.5517V5.50728L17.213 9.52957L10.4763 13.5517V13.5517Z"
+              d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"
               fill="#08A05C"
             />
           </svg>
