@@ -6,7 +6,7 @@ export default function MoreStories() {
   const Posts = useContext(PostsContext)
   return (
     <section>
-      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-6 lg:gap-x-12 row-gap-20 md:row-gap-32 mb-5">
+      <div className="flex flex-wrap justify-center mb-5">
         {Posts.posts.map((post) => (
           <PostPreview
             key={post.slug}
@@ -22,5 +22,5 @@ export default function MoreStories() {
         ))}
       </div>
     </section>
-  )
+  );
 }

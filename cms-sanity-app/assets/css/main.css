@@ -979,33 +979,37 @@ input[type="number"] {
   }
 }
 
-
-
 /* =========================== */
 /* ======Custom blog CSS====== */
 /* =========================== */
 
 .one-liner {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 1; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .three-liner {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   -webkit-line-clamp: 3; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .divider-green500 {
-  border-color: #08A05C;
+  border-color: #08a05c;
 }
 
 /* mx-1 from tailwind does not work in build */
-.marginx2{
+.marginx2 {
   margin: 0 0.375em;
+}
+
+.min-preview-width {
+  min-width: 263px;
+  max-width: 400px;
+  margin-right: 20px;
 }

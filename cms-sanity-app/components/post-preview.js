@@ -14,14 +14,12 @@ export default function PostPreview({
   readTime
 }) {
   return (
-    <div className="mb-16">
+    <div className="mb-16 min-preview-width ">
       <div className="mb-5">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
       <div className="mb-3">
-        <p className=" inline-block text-temp-green-500 text-sm">
-          {type}
-        </p>
+        <p className=" inline-block text-temp-green-500 text-sm">{type}</p>
         <p className=" inline-block float-right text-sm text-right">
           {`${readTime} mins | `} <Date dateString={date} />
         </p>
