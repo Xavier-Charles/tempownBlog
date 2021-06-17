@@ -18,11 +18,11 @@ export default function PostPreview({
       <div className="mb-5">
         <CoverImage slug={slug} title={title} image={coverImage} />
       </div>
-      <div className="grid grid-cols-6 mb-3">
-        <p className="col-start-1 col-span-2 text-temp-green-500 text-sm">
+      <div className="mb-3">
+        <p className=" inline-block text-temp-green-500 text-sm">
           {type}
         </p>
-        <p className="col-end-7 col-span-2 text-sm text-right">
+        <p className=" inline-block float-right text-sm text-right">
           {`${readTime} mins | `} <Date dateString={date} />
         </p>
       </div>

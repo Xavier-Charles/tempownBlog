@@ -12,7 +12,7 @@ export default function PostHeader({
   type,
 }) {
   return (
-    <div className="px-5 md:px-20 md:px-30 lg:px-40">
+    <div className="px-0 md:px-20 md:px-30 lg:px-40">
       <PostTitle>{title}</PostTitle>
       {/* <div className="hidden md:block md:mb-12"> */}
       <div className="">
