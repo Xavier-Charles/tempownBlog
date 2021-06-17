@@ -996,3 +996,8 @@ input[type="number"] {
 .divider-green500 {
   border-color: #08A05C;
 }
+
+/* mx-1 from tailwind does not work in build */
+.marginx2{
+  margin: 0 0.375em;
+}

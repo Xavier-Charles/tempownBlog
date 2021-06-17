@@ -53,7 +53,7 @@ const SocialShareLink = () => {
 
   return (
     <div className="relative flex flex-wrap items-center mt-6 md:mt-2 justify-end w-full text-sm text-temp-gray">
-      <div className="hidden md:block pb-6 md:pb-0 text-temp-green-500 w-20">
+      <div className="hidden md:block pb-6 md:pb-0 text-temp-green-500">
         Share on:{" "}
       </div>
       <div className="flex flex-row w-6/12 justify-end">
@@ -61,12 +61,12 @@ const SocialShareLink = () => {
           href={`https://twitter.com/intent/tweet?url=${postURL}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-1.5"
+          className="mx-1.5 marginx2"
         >
           <svg
             width="19"
-            height="19"
-            viewBox="0 0 19 19"
+            height="20"
+            viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -81,12 +81,12 @@ const SocialShareLink = () => {
           href={`https://www.facebook.com/sharer/sharer.php?u=${postURL}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-1.5"
+          className="mx-1.5 marginx2"
         >
           <svg
-            width="19"
+            width="21"
             height="20"
-            viewBox="0 0 19 20"
+            viewBox="0 0 20 20"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -101,14 +101,14 @@ const SocialShareLink = () => {
           href={`https://www.linkedin.com/shareArticle?mini=true&url=${postURL}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-1.5"
+          className="mx-1.5 marginx2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="19"
-            height="20"
+            width="28"
+            height="18"
             fill="none"
-            viewBox="0 0 24 17"
+            viewBox="0 0 20 20"
           >
             <path
               opacity="0.9"
@@ -122,14 +122,14 @@ const SocialShareLink = () => {
           href={`mailto:reciever@example.com?&subject=&cc=&bcc=&body=${postURL}%0A`}
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-1.5"
+          className="mx-1.5 marginx2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
+            width="28"
+            height="18"
             fill="none"
-            viewBox="0 0 24 20"
+            viewBox="0 0 20 20"
           >
             <path
               opacity="0.9"
