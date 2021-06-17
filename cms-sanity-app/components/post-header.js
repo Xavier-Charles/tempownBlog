@@ -53,7 +53,7 @@ const SocialShareLink = () => {
 
   return (
     <div className="relative flex flex-wrap items-center mt-6 md:mt-2 justify-end w-full text-sm text-temp-gray">
-      <div className="hidden md:block pb-6 md:pb-0 text-temp-green-500">
+      <div className="hidden lg:block lg:mr-10 xl:mr-0 md:pb-0 text-temp-green-500">
         Share on:{" "}
       </div>
       <div className="flex flex-row w-6/12 justify-end">

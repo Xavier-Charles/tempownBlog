@@ -67,25 +67,30 @@ export default function Intro({ Filter }) {
 }
 
 function Buttons({ title, label, handleBtnSelect, selectedBtn }) {
-
   const handleClick = () => {
     if (label === undefined) handleBtnSelect(title);
   };
   return (
-    <div className="m-1 md:m-4" onClick={handleClick}>
+    <>
       {label !== undefined ? (
-        <p className="mx-24 uppercase md:m-0 md:leading-3 md:mt-0.5 md:px-5 md:py-2 md:flex items-center ustify-center text-sm text-temp-primary">
-          {title}
-        </p>
+        <div className="flex justify-center xl:block m-1 md:m-4 w-full lg:w-max">
+          <p className="mx-24 uppercase md:m-0 md:leading-3 md:mt-0.5 md:px-5 md:py-2 md:flex items-center ustify-center text-sm text-temp-primary">
+            {title}
+          </p>
+        </div>
       ) : selectedBtn === title ? (
-        <p className="min-w-max pointer leading-3 px-5 py-2 flex items-center justify-center text-sm text-temp-green-500 border border-green-100 bg-green-100">
-          {title}
-        </p>
+        <div className="m-1 md:m-4" onClick={handleClick}>
+          <p className="min-w-max pointer leading-3 px-5 py-2 flex items-center justify-center text-sm text-temp-green-500 border border-green-100 bg-green-100">
+            {title}
+          </p>
+        </div>
       ) : (
-        <p className="min-w-max pointer leading-3 px-5 py-2 flex items-center justify-center text-sm rounded-md text-temp-gray border border-gray">
-          {title}
-        </p>
+        <div className="m-1 md:m-4" onClick={handleClick}>
+          <p className="min-w-max pointer leading-3 px-5 py-2 flex items-center justify-center text-sm rounded-md text-temp-gray border border-gray">
+            {title}
+          </p>
+        </div>
       )}
-    </div>
+    </>
   );
 }

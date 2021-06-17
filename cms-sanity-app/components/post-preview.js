@@ -34,7 +34,7 @@ export default function PostPreview({
           </a>
         </Link>
       </h3>
-      <p className="text-md leading-relaxed mb-4 text-temp-primary">
+      <p className="three-liner text-md leading-relaxed mb-4 text-temp-primary">
         {excerpt}
       </p>
       <Avatar name={author.name} picture={author.picture} />
