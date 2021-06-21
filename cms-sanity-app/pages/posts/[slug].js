@@ -20,6 +20,7 @@ export default function Post({ data = {}, preview }) {
   const router = useRouter();
 
   const slug = data?.post?.slug;
+  console.log(slug);
   const {
     data: { post, morePosts },
   } = usePreviewSubscription(postQuery, {
@@ -33,6 +34,7 @@ export default function Post({ data = {}, preview }) {
   }
   return (
     <PostsProvider allPosts={morePosts}>
+      {console.log(post.title)}
       <Layout preview={preview}>
         <Container>
           {router.isFallback ? (
