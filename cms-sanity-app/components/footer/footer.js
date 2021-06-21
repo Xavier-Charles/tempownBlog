@@ -169,22 +169,23 @@ const AddressColumn = ({ handleShowContactUsModal }) => {
 };
 
 const Footer = (props) => {
+  const homeUrl = "https://www.tempown.com";
   const columnData1 = [
     {
       id: "j1",
-      url: "/about",
+      url: `${homeUrl}/about`,
       linkName: "About",
     },
 
     {
       id: "j2",
-      url: "/careers",
+      url: `${homeUrl}/careers`,
       linkName: "Careers",
     },
 
     {
       id: "j3",
-      url: "/lender",
+      url: `${homeUrl}/lender`,
       linkName: "Become A Lender",
     },
   ];
@@ -192,22 +193,22 @@ const Footer = (props) => {
   const columnData2 = [
     {
       id: "k1",
-      url: "/faqs",
+      url: `${homeUrl}/faqs`,
       linkName: "FAQs",
     },
     {
       id: "k2",
-      url: "/blog",
+      url: window.location.origin,
       linkName: "Blog",
     },
     {
       id: "k3",
-      url: "/policy",
+      url: `${homeUrl}/policy`,
       linkName: "Policies",
     },
     {
       id: "k4",
-      url: "/terms-of-service",
+      url: `${homeUrl}/terms-of-service`,
       linkName: "Terms of Service",
     },
   ];
