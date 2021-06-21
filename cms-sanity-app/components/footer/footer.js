@@ -155,7 +155,7 @@ const ContactBtn = ({ handleShowContactUsModal }) => {
 const AddressColumn = ({ handleShowContactUsModal }) => {
   return (
     <div className="max-w-full w-full lg:w-auto lg:max-w-sm order-1 lg:order-3 mb-3 lg:mb-0">
-      <div className="space-y-5 text-sm md:text-sm-15 mt-2 mb-4">
+      <div className="space-y-5 text-sm md:text-sm-15 mb-4">
         <p className="text-temp-gray leading-7">
           <strong>Reeddi Inc.</strong>
           <br />
@@ -163,13 +163,14 @@ const AddressColumn = ({ handleShowContactUsModal }) => {
           Toronto, ON M5G 1L5 Canada.
         </p>
       </div>
-      <ContactBtn handleShowContactUsModal={handleShowContactUsModal} />
+      {/* <ContactBtn handleShowContactUsModal={handleShowContactUsModal} /> */}
     </div>
   );
 };
 
 const Footer = (props) => {
   const homeUrl = "https://www.tempown.com";
+  const blogUrl = "https://blog.tempown.com"
   const columnData1 = [
     {
       id: "j1",
@@ -198,7 +199,7 @@ const Footer = (props) => {
     },
     {
       id: "k2",
-      url: window.location.origin,
+      url: blogUrl,
       linkName: "Blog",
     },
     {
