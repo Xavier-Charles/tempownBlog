@@ -1,7 +1,7 @@
 import { parseISO, format } from "date-fns";
 
 export default function Date2({ dateString, readTime }) {
-  const date = parseISO(dateString);
+  const date = dateString? parseISO(dateString): parseISO(new Date());
   return (
     <p className="text-sm w-40">
       {`${readTime} mins read | `}

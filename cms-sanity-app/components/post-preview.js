@@ -1,7 +1,7 @@
 import Avatar from "../components/avatar/avatar";
 import Date from "./date/date";
 import CoverImage from "./cover-image";
-import Link from "next/link";
+// import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function PostPreview({
@@ -42,7 +42,7 @@ export default function PostPreview({
       <p className="three-liner text-md leading-relaxed mb-4 text-temp-primary">
         {excerpt}
       </p>
-      <Avatar name={author.name} picture={author.picture} />
+      <Avatar name={author?.name} picture={author?.picture} />
     </div>
   );
 }
