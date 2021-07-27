@@ -1,6 +1,6 @@
-import cn from 'classnames'
-import Link from 'next/link'
-import { urlForImage } from '../lib/sanity'
+import cn from "classnames";
+import Link from "next/link";
+import { urlForImage } from "../lib/sanity";
 
 export default function CoverImage({ title, slug, image: source }) {
   const image = source ? (
@@ -15,7 +15,9 @@ export default function CoverImage({ title, slug, image: source }) {
       src={urlForImage(source).height(473).width(936).url()}
     />
   ) : (
-    <div style={{ paddingTop: "50%", backgroundColor: "#ddd" }} />
+    <div
+      style={{ paddingTop: "50%", backgroundColor: "#ddd", width: "357px" }}
+    />
   );
 
   return (
@@ -28,5 +30,5 @@ export default function CoverImage({ title, slug, image: source }) {
         image
       )}
     </div>
-  )
+  );
 }
