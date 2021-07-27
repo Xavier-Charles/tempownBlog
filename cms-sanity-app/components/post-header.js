@@ -19,8 +19,8 @@ export default function PostHeader({
         <div className="grid grid-cols-12 ">
           <div className="col-start-1 col-span-12 md:col-span-4">
             <Avatar2
-              name={author.name}
-              picture={author.picture}
+              name={author?.name}
+              picture={author?.picture}
               date={date}
               read
               readTime={readTime}
