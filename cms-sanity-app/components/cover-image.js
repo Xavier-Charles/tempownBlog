@@ -3,6 +3,10 @@ import Link from "next/link";
 import { urlForImage } from "../lib/sanity";
 
 export default function CoverImage({ title, slug, image: source }) {
+  const handleLink = (e) => {
+    e.preventDefault();
+    window.location.assign(`${window.location.origin}/posts/${slug}`);
+  };
   const image = source ? (
     <img
       width={936}
@@ -16,16 +20,16 @@ export default function CoverImage({ title, slug, image: source }) {
     />
   ) : (
     <div
-      style={{ paddingTop: "50%", backgroundColor: "#ddd", width: "357px" }}
+      style={{ paddingTop: "50%", backgroundColor: "#ddd", minWidth: "357px" }}
     />
   );
 
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <a href={`/posts/${slug}`} onClick={handleLink}>
           <a aria-label={title}>{image}</a>
-        </Link>
+        </a>
       ) : (
         image
       )}
